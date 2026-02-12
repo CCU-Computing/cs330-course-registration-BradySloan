@@ -10,16 +10,23 @@ namespace cs330_proj1
 
         //As a student, I want to search for course offerings that meet core goals 
         // so that I can register easily for courses that meet my program requirements
-         public List<CourseOffering> getOfferingsByGoalIdAndSemester(String theGoalId, String semester) {
-          //finish this method during the tutorial 
-          return null;
-        }
 
         
         //Add more service functions here, as needed, for the project
 
         /* As a student, I want to see all available courses so that I know what my options are */
-
+         public List<CourseOffering> getCourseOfferingsBySemester(String semester)
+      {
+         List<CourseOffering> result=new List<CourseOffering>();
+         foreach (CourseOffering c in repo.Offerings)
+         {
+            if (c.Semester.Equals(semester))
+            {
+               result.Add(c);
+            }
+         }
+         return result;
+      }
         /* As a student, I want to see all course offerings by semester, so that I can choose from what's
            available to register for next semester */
 
