@@ -15,6 +15,9 @@ namespace cs330_proj1
         //Add more service functions here, as needed, for the project
 
         /* As a student, I want to see all available courses so that I know what my options are */
+   
+        /* As a student, I want to see all course offerings by semester, so that I can choose from what's
+           available to register for next semester */
          public List<CourseOffering> getCourseOfferingsBySemester(String semester)
       {
          List<CourseOffering> result=new List<CourseOffering>();
@@ -27,9 +30,6 @@ namespace cs330_proj1
          }
          return result;
       }
-        /* As a student, I want to see all course offerings by semester, so that I can choose from what's
-           available to register for next semester */
-
         /* As a student I want to see all course offerings by semester and department so that I can 
         choose major courses to register for */
 
