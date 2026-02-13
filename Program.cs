@@ -14,16 +14,18 @@ namespace cs330courses
             CourseServices service = new CourseServices();
             /*
             Console.WriteLine("---------");
+            /*
             List<CourseOffering> theList = service.getOfferingsByGoalIdAndSemester("CG2","Spring 2021");
             foreach(CourseOffering c in theList) {
                 Console.WriteLine(c);
             }
             
             Console.WriteLine("---------");
-
+*/
             
             // Make each of the next 6 sections of code work
             
+        
             List<Course> theList2 = service.getCourses();
             foreach(Course c in theList2) {
                 Console.WriteLine(c);
@@ -31,6 +33,7 @@ namespace cs330courses
             */
             Console.WriteLine("---------");
             
+/*
             List<CourseOffering> theList3 = service.getCourseOfferingsBySemester("Fall 2020");
             foreach(CourseOffering c in theList3) {
                 Console.WriteLine(c);
