@@ -46,7 +46,14 @@ namespace cs330_proj1
    
         /* As a student, I want to see all course offerings by semester, so that I can choose from what's
            available to register for next semester */
-         public List<CourseOffering> getCourseOfferingsBySemester(String semester)
+        public List<Course> getCourses()
+      {
+         return repo.Courses;
+      }
+
+        /* As a student, I want to see all course offerings by semester, so that I can choose from what's
+           available to register for next semester */
+        public List<CourseOffering> getCourseOfferingsBySemester(String semester)
       {
          List<CourseOffering> result=new List<CourseOffering>();
          foreach (CourseOffering c in repo.Offerings)
@@ -58,14 +65,6 @@ namespace cs330_proj1
          }
          return result;
       }
-        public List<Course> getCourses()
-      {
-         return repo.Courses;
-      }
-
-        /* As a student, I want to see all course offerings by semester, so that I can choose from what's
-           available to register for next semester */
-
         /* As a student I want to see all course offerings by semester and department so that I can 
         choose major courses to register for */
         public List<CourseOffering> getCourseOfferingsBySemesterAndDept(String semester,String dept)
