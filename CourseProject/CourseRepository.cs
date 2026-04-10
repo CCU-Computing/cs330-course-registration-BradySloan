@@ -42,10 +42,19 @@ namespace cs330_proj1
                 Description="communication descr"
 
             };
+            Course c5=new Course()
+            {
+                Name="CSCI 101",
+                Title="Intro to computer science",
+                Credits=4.0,
+                Description="Intro descr"
+
+            };
             Courses.Add(c1);
             Courses.Add(c2);
             Courses.Add(c3);
             Courses.Add(c4);
+            Courses.Add(c5);
             CourseOffering co1 = new CourseOffering() {
                 TheCourse=c1,
                 Section="D1",
@@ -64,9 +73,16 @@ namespace cs330_proj1
                 Semester="Spring 2022"
 
             };
+            CourseOffering co4=new CourseOffering()
+            {
+                TheCourse=c5,
+                Section="01",
+                Semester="Fall 2020"
+            };
             Offerings.Add(co1);
             Offerings.Add(co2);
             Offerings.Add(co3);
+            Offerings.Add(co4);
             CoreGoal cg1 = new CoreGoal() {
                 Id="CG1",
                 Name="Artistic Expression",
