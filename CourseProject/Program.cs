@@ -10,8 +10,8 @@ namespace cs330courses
         {
             Console.WriteLine("Hello World!");
             Console.WriteLine("My name is Brady");
-            
-            CourseServices service = new CourseServices();
+            CourseRepository repo=new CourseRepository();
+            CourseServices service = new CourseServices(repo);
 /*
             /*
             Console.WriteLine("---------");
@@ -31,7 +31,6 @@ namespace cs330courses
             foreach(Course c in theList2) {
                 Console.WriteLine(c);
             }
-            */
             Console.WriteLine("---------");
             
 /*
