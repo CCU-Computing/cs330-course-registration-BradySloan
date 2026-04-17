@@ -161,6 +161,54 @@ namespace CourseProject.Tests
 
             Assert.Empty(result);
         }
+        [Fact]
+        public void GetCourseOfferingsBySemesterAndDept_Match_ReturnsCorrect()
+        {
+            var course=new Course
+            {
+                Name="CSCI 101",
+                Title="Intro",
+                Credits=4
+            };
+            var offerings=new List<CourseOffering>()
+            {
+                new CourseOffering
+                {
+                    Semester="Fall 2020",
+                    Section="1",
+                    TheCourse=course
+                }
+            };
+            var mockRepository=new Mock<ICourseRepository>();
+            mockRepository.Setup(m=>m.Offerings).Returns(offerings);
+            var service=new CourseServices(mockRepository.Object);
+            var result=service.getCourseOfferingsBySemesterAndDept("Fall 2020","CSCI");
+            Assert.Single(result);
+        }
+        [Fact]
+        public void GetCourseOfferingsBySemesterAndDept_NoMatch_ReturnsEmpty()
+        {
+            var course=new Course
+            {
+                Name="Math 101",
+                Title="Math",
+                Credits=3
+            };
+            var offerings=new List<CourseOffering>()
+            {
+                new CourseOffering
+                {
+                    Semester="Fall 2020",
+                    Section="1",
+                    TheCourse=course
+                }
+            };
+            var mockRepository=new Mock<ICourseRepository>();
+            mockRepository.Setup(m=>m.Offerings).Returns(offerings);
+            var service=new CourseServices(mockRepository.Object);
+            var result=service.getCourseOfferingsBySemesterAndDept("Fall 2020","CSCI");
+            Assert.Empty(result);
+        }
         private List<Course> GetTestCourses()
         {
             return new List<Course>(){
